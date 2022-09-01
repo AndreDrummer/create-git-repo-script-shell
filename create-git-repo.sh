@@ -15,8 +15,16 @@ function criarRepositorio() {
     echo "$val"
 }
 
+function deletarRepositorio() {
+    echo "Deletando repositório $1..."
+    curl -X DELETE -H "Accept: application/vnd.github+json" -H 'Authorization: token <TOKEN>' https://api.github.com/repos/AndreDrummer/$1
+}
 
-# Start // $1 é o nome do repositorio passado via paramentro ao chamaer o arquivo no terminal.
-# ex.: file.sh repoName
-criarRepositorio $1
+
+
+# $1 é o nome do repositorio passado via paramentro ao chamar o arquivo no terminal. Ex.: file.sh repoName
+
+# Start - Descomente a função que quer utilizar. Futuramente isso pode ser melhorado programaticamente.
+# criarRepositorio $1
+# deletarRepositorio $1
 
